@@ -6,11 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "seed": "node ./scripts/seed.js"
   },
   "dependencies": {
     "@vercel/postgres": "^0.5.1",
     "next": "14.0.4",
+    "pg-promise": "^11.5.4",
     "react": "^18",
     "react-dom": "^18"
   },
