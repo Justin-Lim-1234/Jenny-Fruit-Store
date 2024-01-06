@@ -13,7 +13,7 @@ export default async function Page() {
             </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-4 h-dvh w-full justify-start rounded-md bg-gray-200 p-3">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md-h-full h-vh w-full justify-start rounded-md bg-gray-200 p-3">
           {fruitsData.map((fruit) => (
             <FruitNode
             key={fruit.id}
