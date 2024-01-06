@@ -1,26 +1,24 @@
 'use client';
 
 import { useDebouncedCallback } from "use-debounce";
-import { useState } from "react";
+import { FruitNodeProps } from "./FruitProps";
 
-interface FruitNodeProps {
-    id: number;
-    name: string;
-    price: number;
-    qty: number;
+interface FruitPropsCB extends FruitNodeProps {
+    updateTotalPrice: (id: number, quantity: number) => void;
 }
 
-const FruitNode: React.FC<FruitNodeProps> = ({ id, name, price, qty }) => {
-    const [quantity, setQuantity] = useState(0);
+const FruitNode: React.FC<FruitPropsCB> = ({ id, name, updateTotalPrice }) => {
 
     const handleInput = useDebouncedCallback((inputQty: string) => {
         if (inputQty) {
             const intQty = parseInt(inputQty);
-            setQuantity(intQty);
-            console.log(`${name}: ${intQty}`);
+            console.log(`${id}: ${intQty}`);
+            updateTotalPrice(id, intQty);
         }
         else {
-            return 0;
+            const intQty = 0;
+            console.log(`${id}: ${intQty}`);
+            updateTotalPrice(id, intQty);
         }
     }, 400);
 
@@ -28,7 +26,7 @@ const FruitNode: React.FC<FruitNodeProps> = ({ id, name, price, qty }) => {
         <div id="fnContainer">
             <div id="fnTitle">{name}</div>
             <label id="fnLabel">Enter Quantity:</label><br></br>
-            <input id="fnInput" placeholder="0" onChange={(e) => handleInput(e.target.value)}></input>
+            <input id="fnInput" onChange={(e) => handleInput(e.target.value)}></input>
         </div>
     );
 }

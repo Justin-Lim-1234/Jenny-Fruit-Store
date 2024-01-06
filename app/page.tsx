@@ -1,4 +1,5 @@
-import FruitNode from "@/ui/FruitNode";
+import React from 'react'
+import FruitHandler from '@/ui/FruitHandler';
 import { fetchFruits } from "@/lib/data";
 
 export default async function Page() {
@@ -12,18 +13,11 @@ export default async function Page() {
                 <h1>Jenny&apos;s Fruit Store</h1>
             </div>
         </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md-h-full h-vh w-full justify-start rounded-md bg-gray-200 p-3">
-          {fruitsData.map((fruit) => (
-            <FruitNode
-            key={fruit.id}
-            id={fruit.id}
-            name={fruit.name}
-            price={fruit.price}
-            qty={fruit.qty}
-          />
-          ))}
-        </div>
+        <div>
+      <div id="fruitHandler" className="grid grid-cols-2 md:grid-cols-3 gap-4 md-h-full h-vh w-full justify-start rounded-md bg-gray-200 p-3">
+        <FruitHandler fruits={fruitsData} />
+      </div>
+    </div>
     </div>
   );
 }
