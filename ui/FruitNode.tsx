@@ -1,7 +1,7 @@
 'use client';
 
 import { useDebouncedCallback } from "use-debounce";
-import { FruitNodeProps } from "./FruitProps";
+import { FruitNodeProps } from "../lib/FruitProps";
 
 interface FruitPropsCB extends FruitNodeProps {
     updateTotalPrice: (id: number, quantity: number) => void;
@@ -20,13 +20,13 @@ const FruitNode: React.FC<FruitPropsCB> = ({ id, name, updateTotalPrice }) => {
             console.log(`${id}: ${intQty}`);
             updateTotalPrice(id, intQty);
         }
-    }, 400);
+    }, 800);
 
     return (
         <div id="fnContainer">
             <div id="fnTitle">{name}</div>
             <label id="fnLabel">Enter Quantity:</label><br></br>
-            <input id="fnInput" onChange={(e) => handleInput(e.target.value)}></input>
+            <input id="fnInput" type="number" onChange={(e) => handleInput(e.target.value)}></input>
         </div>
     );
 }

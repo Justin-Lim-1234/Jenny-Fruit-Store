@@ -1,5 +1,6 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -35,5 +36,43 @@ body {
   text-align: center;
 }
 
+#totalLabel {
+  display: inline-block;
+  background-color: aliceblue;
+  padding: 0.3em;
+  border-width: 2px;
+  border-radius: 5px;
+  border-color: rgb(49, 48, 48);
+  border-style: solid;
+  text-align: left;
+  width: 7em;
+}
 
-@import 'tailwindcss/utilities';
+#tButton {
+  display: inline-block;
+  width: 7em;
+  font-weight: bold;
+  margin-bottom: 1em;
+  background-color: rgb(97, 209, 223);
+  color: black;
+  padding: 0.2em;
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: rgb(49, 48, 48);
+  border-style: solid;
+}
+
+#tButton:hover{
+  background-color: rgb(57, 186, 203);
+  color: white;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
