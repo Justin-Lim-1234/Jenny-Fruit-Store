@@ -20,11 +20,11 @@ body {
 
 #fnTitle {
   margin-top: 0.5em;
-  font-size: 3vw;
+  font-size: 2.5rem;
 }
 
 #fnLabel {
-  font-size: 1.2vw;
+  font-size: 1rem;
 }
 
 #fnInput {
@@ -36,23 +36,28 @@ body {
   text-align: center;
 }
 
+#nodeContainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.5em;
+  margin-bottom: 0.2em;
+}
+
 #totalLabel {
-  display: inline-block;
+  margin-right: 0.7em;
   background-color: aliceblue;
   padding: 0.3em;
   border-width: 2px;
   border-radius: 5px;
   border-color: rgb(49, 48, 48);
   border-style: solid;
-  text-align: left;
+  text-align: center;
   width: 7em;
 }
 
 #tButton {
-  display: inline-block;
   width: 7em;
   font-weight: bold;
-  margin-bottom: 1em;
   background-color: rgb(97, 209, 223);
   color: black;
   padding: 0.2em;
@@ -60,6 +65,10 @@ body {
   border-width: 2px;
   border-color: rgb(49, 48, 48);
   border-style: solid;
+}
+
+#tButton span {
+  text-align: center;
 }
 
 #tButton:hover{
