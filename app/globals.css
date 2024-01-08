@@ -76,6 +76,26 @@ body {
   color: white;
 }
 
+#tButton:disabled {
+  background-color: rgb(149, 148, 148);
+  color: white;
+}
+
+#qtyErrorText {
+  color: rgb(197, 96, 96)
+}
+
+#okButon {
+  margin-left: 0.3em;
+  border-width: 2px;
+  border-color: rgb(49, 48, 48);
+  border-style: solid;
+}
+
+#logSuccessText {
+  color: rgb(96, 197, 145)
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;

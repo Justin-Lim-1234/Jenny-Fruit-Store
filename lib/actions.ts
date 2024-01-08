@@ -82,6 +82,4 @@ export async function logTransaction(total: number, fruits: { id: number; name: 
 
     revalidatePath('./');
     redirect('./');
-
-
 }
