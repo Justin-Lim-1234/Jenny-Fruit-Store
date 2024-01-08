@@ -31,7 +31,6 @@ const FruitHandler: React.FC<FruitHandlerProps> = ({ fruits }) => {
 
         const intQty = parseInt(inputQuantity);
         const quantity = isNaN(intQty) ? 0 : intQty;
-        console.log((/^\d+$/.test(inputQuantity)));
 
         const selectedFruit = fruits.find((fruit) => fruit.id === id);
 
@@ -49,38 +48,17 @@ const FruitHandler: React.FC<FruitHandlerProps> = ({ fruits }) => {
             else if (quantity >= 0) {
 
                 const updatedTotal = totalPrice + quantity * selectedFruit.price - prevQty * selectedFruit.price;
-                    prevQtyRef.current[selectedFruit.id - 1] = quantity;
-                    setTotalPrice((isNaN(updatedTotal) ? 0 : updatedTotal));
+                prevQtyRef.current[selectedFruit.id - 1] = quantity;
+                setTotalPrice((isNaN(updatedTotal) ? 0 : updatedTotal));
 
-                    setFruitValidity((prevValidity) => {
-                        const newValidity = [...prevValidity];
-                        newValidity[selectedFruit.id - 1] = true;
-                        return newValidity;
-                    });
-                
-
-                // if ((/^\d+$/.test(inputQuantity))) {
-                //     const updatedTotal = totalPrice + quantity * selectedFruit.price - prevQty * selectedFruit.price;
-                //     prevQtyRef.current[selectedFruit.id - 1] = quantity;
-                //     setTotalPrice((isNaN(updatedTotal) ? 0 : updatedTotal));
-
-                //     setFruitValidity((prevValidity) => {
-                //         const newValidity = [...prevValidity];
-                //         newValidity[selectedFruit.id - 1] = true;
-                //         return newValidity;
-                //     });
-                // }
-
-                // else {
-                //     setFruitValidity((prevValidity) => {
-                //         const newValidity = [...prevValidity];
-                //         newValidity[selectedFruit.id - 1] = false;
-                //         return newValidity;
-                //     });
-                // }
+                setFruitValidity((prevValidity) => {
+                    const newValidity = [...prevValidity];
+                    newValidity[selectedFruit.id - 1] = true;
+                    return newValidity;
+                });
             }
 
-            
+
 
             else {
                 setFruitValidity((prevValidity) => {
@@ -106,7 +84,6 @@ const FruitHandler: React.FC<FruitHandlerProps> = ({ fruits }) => {
     const noEmptyFields = (totalPrice <= 0) ? true : false;
 
     const validCheck = () => {
-        console.log(fruitValidity);
         const isAllValid = fruitValidity.every((valid) => valid);
         setIsValid(isAllValid);
     }
@@ -145,7 +122,7 @@ const FruitHandler: React.FC<FruitHandlerProps> = ({ fruits }) => {
                 </div>
             </div>
 
-            <div className='grid grid-cols-2 md:grid-cols-3 gap-4 md-h-full h-vh w-full justify-start rounded-md bg-gray-200 p-3'>
+            <div id='fNode'>
                 {fruits.map((fruit) => (
                     <FruitNode
                         key={fruit.id}

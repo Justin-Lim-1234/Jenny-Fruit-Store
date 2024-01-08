@@ -1,6 +1,7 @@
-import { ChangeEvent } from "react";
+import React from "react";
 import { useDebouncedCallback } from "use-debounce";
 import { FruitNodeProps } from "../lib/FruitProps";
+
 
 interface FruitPropsCB extends FruitNodeProps {
     updateTotalPrice: (id: number, name: string, quantity: string) => void;

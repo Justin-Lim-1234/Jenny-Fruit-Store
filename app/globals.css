@@ -28,7 +28,6 @@ body {
 }
 
 #fnInput {
-  z-index: 1000;
   border-width: 3px;
   border-radius: 5px;
   width: 6rem;
@@ -71,7 +70,7 @@ body {
   text-align: center;
 }
 
-#tButton:hover{
+#tButton:hover {
   background-color: rgb(57, 186, 203);
   color: white;
 }
@@ -94,6 +93,22 @@ body {
 
 #logSuccessText {
   color: rgb(96, 197, 145)
+}
+
+#fNode {
+  display: grid;
+  padding: 0.75rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  justify-content: flex-start;
+  border-radius: 0.375rem;
+  width: 100%;
+  background-color: #E5E7EB;
+
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 input::-webkit-outer-spin-button,
