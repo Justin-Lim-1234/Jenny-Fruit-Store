@@ -9,7 +9,6 @@
 
 # testing
 /coverage
-/scripts/seed.js
 
 # next.js
 /.next/
